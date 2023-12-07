@@ -1,14 +1,18 @@
 package com.dailyAssignments;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        CoffeMug coffee = new CoffeMug(10);
-        GasTank gasTank = new GasTank(500);
+        int userInput;
+        Scanner scanner = new Scanner(System.in);
+        userInput = scanner.nextInt();
 
-        coffee.fill(11);
+        try {
+            Circle circle = new Circle(userInput);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
-        gasTank.fill();
-        gasTank.empty(2);
-        gasTank.empty(500);
     }
 }
