@@ -2,51 +2,45 @@ package com.dailyAssignments;
 
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<Athlete> athletes = new ArrayList<>(8);
-        athletes.add(new Athlete("Jack Nicklaus", 75, 595));
-        athletes.add(new Athlete("Lindsey Vonn", 82, 395));
-        athletes.add(new Athlete("Mikaela Shiffrin", 82, 232));
-        athletes.add(new Athlete("Novak Djokovic", 92, 280));
-        athletes.add(new Athlete("Rafael Nadal", 92, 304));
-        athletes.add(new Athlete("Roger Federer", 103, 367));
-        athletes.add(new Athlete("Serena Williams", 73, 240));
-        athletes.add(new Athlete("Tiger Woods", 82, 395));
-        athletes.sort(Athlete::compareTo);
-        athletes.forEach(System.out::println);
+        int[] input = {2,7,11,15,9,8,3,1};
+        int target = 9;
 
-        System.out.println("--------------------------");
+        int[] improvedArray = removeBiggerThanTargetAndZeros(input, target);
+        int[] result = findTarget(improvedArray, target, new ArrayList<>());
+        System.out.println(Arrays.toString(result));
 
-        List<Athlete2> athletes2 = new ArrayList<>(8);
-        athletes2.add(new Athlete2("Jack Nicklaus", 75, 595));
-        athletes2.add(new Athlete2("Lindsey Vonn", 82, 395));
-        athletes2.add(new Athlete2("Mikaela Shiffrin", 82, 232));
-        athletes2.add(new Athlete2("Novak Djokovic", 92, 280));
-        athletes2.add(new Athlete2("Rafael Nadal", 92, 304));
-        athletes2.add(new Athlete2("Roger Federer", 103, 367));
-        athletes2.add(new Athlete2("Serena Williams", 73, 240));
-        athletes2.add(new Athlete2("Tiger Woods", 82, 395));
-        athletes2.sort(new Athlete2WinRateComparator());
-        athletes2.forEach(System.out::println);
+    }
+    private static int[] findTarget(int[] input, int target, List<Integer> output) {
+        // assuming each number can only be used once. (here im only using it with the first qualified int)
+        // for an example if [1,4,5,5] if target is 9, the 4 will be used with the first 5, the second 5 will require another 4
 
-        System.out.println("--------------------------");
+        if (input.length == 0)
+            return output.stream().mapToInt(Integer::intValue).toArray();
 
-        List<Athlete> bonus1 = new ArrayList<>(2);
-        bonus1.add(new Athlete("Sean Carter", 1, 2));
-        bonus1.add(new Athlete("Mikaela Shiffrin", 82, 232));
-        Collections.sort(bonus1);
-        bonus1.forEach(System.out::println);
+        int currNum = input[0];
 
-        System.out.println("--------------------------");
+        for (int i = 1; i < input.length; i++) {
+            if (( currNum + input[i] ) > target || ( currNum + input[i] ) < target)
+                continue;
+            output.add(currNum);
+            output.add(input[i]);
+            output.add(0);
+        }
+        input = Arrays.copyOfRange(input, 1, input.length);
+        return findTarget(input, target, output);
+    }
+    private static int[] removeBiggerThanTargetAndZeros(int[] input, int target) {
+        List<Integer> output = new ArrayList<>(input.length);
 
-        List<Athlete2> bonus2 = new ArrayList<>(2);
-        bonus2.add(new Athlete2("Sean Carter", 1, 2));
-        bonus2.add(new Athlete2("Mikaela Shiffrin", 82, 232));
-        bonus2.sort(new Athlete2WinRateComparator());
-        bonus2.forEach(System.out::println);
+        for (int i = 0; i < input.length; i++) {
+            if (input[i] < target && input[i] != 0)
+                output.add(input[i]);
+        }
+        return output.stream().mapToInt(Integer::intValue).toArray();
     }
 }
