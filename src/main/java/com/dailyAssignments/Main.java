@@ -1,25 +1,24 @@
 package com.dailyAssignments;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 public class Main {
     public static void main(String[] args) {
-        Map<Character, Integer> charOccurrencesTracker = new HashMap<>();
-        String sentence = "The quick brown fox jumps over the lazy dog.";
-//        String sentence = "Testing 1 2 3 4 ... testing 1 2 3 4";
 
-        String englishCharactersRegex = "[a-zA-Z]+";
-        Pattern pattern = Pattern.compile(englishCharactersRegex);
+        Appointment appointment = new Appointment(ZonedDateTime.of(2024, 1, 17, 14, 30, 0, 0, ZoneId.systemDefault()), Duration.ofMinutes(90));
+        Person person0 = new Person("Nasser", LocalDate.of(1997,10,25));
+        Person person1 = new Person("Rod", LocalDate.of(1997,10,25));
+        Person person2 = new Person("Josh", LocalDate.of(1997,10,1));
+        Person person3 = new Person("Hunter", LocalDate.of(1997,10,27));
 
-        for (int i = 0; i < sentence.length(); i++) {
-            char currentChar = sentence.charAt(i);
-            Matcher matcher = pattern.matcher(String.valueOf(currentChar));
-            if (matcher.matches())
-                charOccurrencesTracker.put(currentChar, charOccurrencesTracker.getOrDefault(currentChar, 0) + 1);
-        }
-        System.out.println(charOccurrencesTracker);
+        appointment.alert();
+
+        AgeComparator ageComparator = new AgeComparator();
+        System.out.println(ageComparator.compare(person0, person1));
+        System.out.println(ageComparator.compare(person1, person2));
+        System.out.println(ageComparator.compare(person1, person3));
     }
 }
