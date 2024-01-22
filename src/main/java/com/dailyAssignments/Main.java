@@ -1,24 +1,42 @@
 package com.dailyAssignments;
 
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
+        int[] tens = new int[]{100, 90, 80, 70, 60, 50, 40, 30, 20, 10};
 
-        Appointment appointment = new Appointment(ZonedDateTime.of(2024, 1, 17, 14, 30, 0, 0, ZoneId.systemDefault()), Duration.ofMinutes(90));
-        Person person0 = new Person("Nasser", LocalDate.of(1997,10,25));
-        Person person1 = new Person("Rod", LocalDate.of(1997,10,25));
-        Person person2 = new Person("Josh", LocalDate.of(1997,10,1));
-        Person person3 = new Person("Hunter", LocalDate.of(1997,10,27));
+        System.out.println(containsLarger(tens, 50, 0)); // returns true
+        System.out.println(containsLarger(tens, 50, 5)); // returns false
 
-        appointment.alert();
+        System.out.println(sumEvens(tens, 1, 10)); // returns false
 
-        AgeComparator ageComparator = new AgeComparator();
-        System.out.println(ageComparator.compare(person0, person1));
-        System.out.println(ageComparator.compare(person1, person2));
-        System.out.println(ageComparator.compare(person1, person3));
+
+    }
+
+    public static int sumEvens(int[] nums, int start, int end) {
+        if (start == end)
+            return 0;
+
+        if (nums[start] % 2 == 0)
+            return nums[start] + sumEvens(nums, start + 1, end);
+        else
+            return sumEvens(nums, start + 1, end);
+    }
+
+    // cant think of anyway to do it without changing the parameters
+//    public static int sumEvens(int start, int end) {
+//    }
+
+    public static boolean containsLarger(int[] nums, int n, int fromIndex) {
+        if (nums.length == 0)
+            return false;
+
+        nums = Arrays.copyOfRange(Arrays.copyOfRange(nums, 1, nums.length), fromIndex, nums.length);
+
+        if (nums[0] > n)
+            return true;
+
+        return containsLarger(Arrays.copyOfRange(nums, 1, nums.length), n, 0);
     }
 }
