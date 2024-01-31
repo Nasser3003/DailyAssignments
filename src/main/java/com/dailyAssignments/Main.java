@@ -1,26 +1,22 @@
 package com.dailyAssignments;
 
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
-        String pathToRead = "src/main/java/com/dailyAssignments/data/words_alpha.txt";
-        String pathToWrite = "src/main/java/com/dailyAssignments/data/long_words.txt";
 
-        Reader reader = new Reader();
-        Writer writer = new Writer();
+        Runner car = new Runner("Car", 100, 2.5);
+        Runner scooter = new Runner("scooter", 100, 1.5);
 
-        System.out.println(reader.findLongestWordAmazing(pathToRead));
-        System.out.println(reader.findLongestWordRegular(pathToRead));
+        Thread thread1 = new Thread(car);
+        Thread thread2 = new Thread(scooter);
+        thread1.start();
+        thread2.start();
 
-        List<String> OverNumberLetters = reader.findWordsOverNLetters(pathToRead, 24);
-        writer.writeIntoFile(pathToWrite, OverNumberLetters);
-
-        reader.printAllWords(pathToWrite);
-        reader.printAllWordsTheLazyWay(pathToWrite);
-        reader.printAllWordsTheCoolWay(pathToWrite);
-
-
-
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("winner is: " + Runner.winner);
     }
 }
