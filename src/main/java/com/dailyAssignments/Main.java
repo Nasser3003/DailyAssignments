@@ -1,22 +1,1 @@
-package com.dailyAssignments;
-
-public class Main {
-    public static void main(String[] args) {
-
-        Runner car = new Runner("Car", 100, 2.5);
-        Runner scooter = new Runner("scooter", 100, 1.5);
-
-        Thread thread1 = new Thread(car);
-        Thread thread2 = new Thread(scooter);
-        thread1.start();
-        thread2.start();
-
-        try {
-            thread1.join();
-            thread2.join();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("winner is: " + Runner.winner);
-    }
-}
+package com.dailyAssignments;import java.time.Duration;import java.time.LocalDateTime;public class Main {    public static void main(String[] args) {        String path = "src/main/java/com/dailyAssignments/data/moby-dick.txt";        long numberOfLines = CountingWhales.numberOfLines(path);        long numberOfWords = CountingWhales.numberOfWords(path);        System.out.println(numberOfLines);        System.out.println(numberOfWords);        LocalDateTime startDateTime = LocalDateTime.now();        long numberOfOccurrences = CountingWhales.numberOfOccurrences(path, "whale");        LocalDateTime endDateTime = LocalDateTime.now();        Duration elapsedTime = Duration.between(startDateTime, endDateTime);        System.out.println(numberOfOccurrences);        System.out.println("Stream execution took: " + elapsedTime.toMillis() + " milliseconds");        System.out.println("----------------------------------------------");        Reader reader = new Reader(path, "whale");        LocalDateTime startTimeMultiThread = LocalDateTime.now();        reader.run();        LocalDateTime endTimeMultiThread = LocalDateTime.now();        Duration elapsedTimeMultiThread = Duration.between(startTimeMultiThread, endTimeMultiThread);        System.out.println("MultiThread execution took: " + elapsedTimeMultiThread.toMillis() + " milliseconds");    }}
