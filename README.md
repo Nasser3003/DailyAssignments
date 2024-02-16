@@ -35,6 +35,10 @@ Our approach to ensuring a robust and maintainable codebase includes:
 - **User Interface**: Developed a fun and engaging UI.
 - **Algorithms**: Created bespoke algorithms for both the bot and the dealer.
 - **Logging**: Opted for comprehensive logging over file storage for efficiency.
+  
+## Additional Notes
+- **SQL Queries**: Ensure to run the specified SQL queries as part of the initial setup.
+- **Documentation**: Refer to `README.md` for comprehensive documentation on system setup and usage.
 
 ## Challenges and Solutions
 ### Circular Dependency
@@ -55,9 +59,3 @@ Our approach to ensuring a robust and maintainable codebase includes:
 ### Code Restructuring
 - Adapted the system to accommodate a separate dealer entity following a major structural change.
 
-## Additional Notes
-- **SQL Queries**: Ensure to run the specified SQL queries as part of the initial setup.
-- **Documentation**: Refer to `README.md` for comprehensive documentation on system setup and usage.
-
-## Conclusion
-A summary that reflects on the project's development process, highlighting the learning outcomes and the value added through the application of the discussed technologies and strategies.
