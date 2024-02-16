@@ -47,7 +47,7 @@ Our approach to ensuring a robust and maintainable codebase includes:
 ### Persistence Issues
 - Resolved using `entityManager.merge()` for transactional and JPA persist issues.
 
-### Data Representation
+### Win Lose Issues
 - Utilized numeric values (-2, -1, 0, 1, 2) to represent win/lose/tie states instead of booleans.
 
 ### UI Enhancement
