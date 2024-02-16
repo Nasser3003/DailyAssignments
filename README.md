@@ -33,7 +33,7 @@ Our approach to ensuring a robust and maintainable codebase includes:
 
 ## Enhancements and Features
 - **User Interface**: Developed a fun and engaging UI.
-- **Algorithms**: Created bespoke algorithms for both the bot and the dealer.
+- **Algorithm**: Created bespoke algorithms for both the bot and the dealer.
 - **Logging**: Opted for comprehensive logging over file storage for efficiency.
   
 ## Additional Notes
