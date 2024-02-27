@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Logs</title>
+</head>
+<body>
+<h1>This is a simple tool to log your exercises. Fill in the form below to add a new exercise entry.</h1>
+
+<form>
+    <div class="form-input">
+        <label for="exerciseName">Exercise Name:</label>
+        <input type="text" id="exerciseName" name="exerciseName" required>
+    </div>
+    <div class="form-input">
+        <label for="date">Date: </label>
+        <input type="date" id="date" name="date" required>
+    </div>
+    <div class="form-input">
+        <label for="number">Duration:</label>
+        <input type="number" id="number" name="number"  min="0">
+    </div>
+    <div class="form-input">
+        <label for="intensity">Intensity</label>
+        <select id="intensity" name="intensity">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+    </div>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+</form>
+<table>
+    <thead>
+    <tr>
+        <th>Exercise Name</th>
+        <th>Date</th>
+        <th>Duration (minutes)</th>
+        <th>Intensity</th>
+    </tr>
+    <tr>
+        <td>Run</td>
+        <td>2024-02-25</td>
+        <td>30</td>
+        <td>High</td>
+    </tr>
+    <tr>
+        <td>Swim</td>
+        <td>2024-02-24</td>
+        <td>45</td>
+        <td>Medium</td>
+    </tr>
+    <tr>
+        <td>Yoga</td>
+        <td>2024-02-23</td>
+        <td>60</td>
+        <td>Low</td>
+    </tr>
+    </thead>
+</table>
+
+</body>
+</html>
