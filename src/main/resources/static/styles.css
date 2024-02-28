@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F0F4F8;
+    color: #333;
+}
+
+#logo {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: auto;
+}
+
+#main-heading {
+    color: #2B2D42;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-input label, .form-input input, .form-input select {
+    display: block;
+    margin: 10px 0;
+}
+
+#exercise-form {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 500px;
+}
+
+#exercise-table {
+    margin: 20px auto;
+    width: 90%;
+    border-collapse: collapse;
+}
+
+#exercise-table th, #exercise-table td {
+    border: 1px solid #8D99AE;
+    padding: 10px;
+    text-align: left;
+}
+
+button {
+    background-color: #EF233C;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #D90429;
+}
