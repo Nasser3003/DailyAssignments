@@ -3,66 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Exercise Logs</title>
 </head>
 <body>
-<h1>Exercise Log Tool</h1>
-<h2>Simple & Efficient</h2>
-<p>Fill in the form below to add a new exercise entry.</p>
+<header>
+    <h1>Welcome to My Portfolio</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="favourites.html">Favorites</a></li>
+            <li><a href="references.html">References</a></li>
+        </ul>
+    </nav>
+</header>
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I am passionate about technology and love to explore new ideas. With a background in Information technology,
+        I enjoy coding, problem-solving, and learning about emerging technologies. In my free time, I indulge in
+        video games.
+    </p>
+</section>
+<section id="pictures">
+    <h2>My Story in Pictures</h2>
+    <div class="picture-container">
+<div>
+    <img src="https://hips.hearstapps.com/hmg-prod/images/beautiful-smooth-haired-red-cat-lies-on-the-sofa-royalty-free-image-1678488026.jpg?crop=0.88847xw:1xh;center,top&resize=1200:*" alt="pic of cat 1" width="300">
 
-<form>
-    <div class="form-input">
-        <label for="exerciseName">Exercise Name:</label>
-        <input type="text" id="exerciseName" name="exerciseName" required>
-    </div>
-    <div class="form-input">
-        <label for="date">Date: </label>
-        <input type="date" id="date" name="date" required>
-    </div>
-    <div class="form-input">
-        <label for="number">Duration:</label>
-        <input type="number" id="number" name="number"  min="0">
-    </div>
-    <div class="form-input">
-        <label for="intensity">Intensity</label>
-        <select id="intensity" name="intensity">
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-        </select>
-    </div>
-    <button type="submit">Submit</button>
-    <button type="reset">Reset</button>
-</form>
-<table id="exercise-table">
-    <thead>
-    <tr>
-        <th>Exercise Name</th>
-        <th>Date</th>
-        <th>Duration (minutes)</th>
-        <th>Intensity</th>
-    </tr>
-    <tr>
-        <td>Run</td>
-        <td>2024-02-25</td>
-        <td>30</td>
-        <td>High</td>
-    </tr>
-    <tr>
-        <td>Swim</td>
-        <td>2024-02-24</td>
-        <td>45</td>
-        <td>Medium</td>
-    </tr>
-    <tr>
-        <td>Yoga</td>
-        <td>2024-02-23</td>
-        <td>60</td>
-        <td>Low</td>
-    </tr>
-    </thead>
-</table>
+</div>
+        <div>
+            <img src="https://img.freepik.com/free-photo/cute-domestic-kitten-sits-window-staring-outside-generative-ai_188544-12519.jpg?size=626&ext=jpg&ga=GA1.1.1395880969.1709164800&semt=ais" alt="pic of cat 2" width="300">
 
+        </div>
+        <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBGEyj5uDOthT9mTFvP5Ve8F9SyYsinIrl3Bsz196ZkQ&s" alt="Picture of cat 3" width="300">
+
+        </div>
+    </div>
+</section>
+<footer>
+    <p>&copy; Nasser 1997 - 2024</p>
+</footer>
 </body>
 </html>
