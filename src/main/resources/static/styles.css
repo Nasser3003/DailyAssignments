@@ -1,56 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* styles.css */
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #F0F4F8;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
     color: #333;
 }
 
-#logo {
-    display: block;
-    margin: 0 auto;
-    width: 100px;
-    height: auto;
-}
-
-#main-heading {
-    color: #2B2D42;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.form-input label, .form-input input, .form-input select {
-    display: block;
-    margin: 10px 0;
-}
-
-#exercise-form {
-    margin: 20px auto;
-    width: 90%;
-    max-width: 500px;
-}
-
-#exercise-table {
-    margin: 20px auto;
-    width: 90%;
-    border-collapse: collapse;
-}
-
-#exercise-table th, #exercise-table td {
-    border: 1px solid #8D99AE;
-    padding: 10px;
-    text-align: left;
-}
-
-button {
-    background-color: #EF233C;
+.header button {
+    background-color: #FF69B4; /* Pink color */
     color: white;
-    padding: 10px 20px;
     border: none;
+    padding: 10px 20px;
     cursor: pointer;
-    margin-right: 10px;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
-button:hover {
-    background-color: #D90429;
+.image-description {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.image-description img {
+    max-width: 50%;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.description {
+    width: 50%;
+    padding-left: 20px;
+}
+
+.color-options h2 {
+    margin-bottom: 10px;
+}
+
+.colors img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    padding: 5px;
 }
